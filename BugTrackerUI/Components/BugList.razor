@@ -9,15 +9,24 @@
             <th>Priority</th>
         </tr>
     </thead>
-    @foreach (var bug in Bugs)
-   {
-       <tr>
-           <td>@bug.Id</td>
-           <td>@bug.Title</td>
-           <td>@bug.Description</td>
-           <td>@bug.Priority</td>
-       </tr>
-   }
+    @if (Bugs.Count > 0)
+    {
+        @foreach (var bug in Bugs)
+        {
+            <tr>
+                <td>@bug.Id</td>
+                <td>@bug.Title</td>
+                <td>@bug.Description</td>
+                <td>@bug.Priority</td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="4">No bugs have been found plase add them using the menu</td>
+        </tr>
+    }
 </table>
 
 
